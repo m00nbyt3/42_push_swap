@@ -6,25 +6,48 @@
 /*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:40:40 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/02 15:13:41 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/05 11:40:48 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 void	swap(int *stack, char side);
+void	push(int *from, int *to, int size, char side);
+void	rotate(int *stack, int size, char side);
+void	r_rotate(int *stack, int size, char side);
 
 void	swap(int *stack, char side)
 {
 	int tmp;
 
 	if (side == 'a')
-		write(1, "sa", 2);
+		write(1, "sa\n", 3);
 	else if (side == 'b')
-		write(1, "sb", 2);
+		write(1, "sb\n", 3);
+	else if (side == 's')
+		write(1, "ss\n", 3);
 	tmp = *stack;
 	*stack = *(stack + 1);
 	*(stack + 1) = tmp;
+}
+
+void	push(int *from, int *to, int size, char side)
+{
+	int	i;
+
+	if (side == 'a')
+		write(1, "pa\n", 3);
+	else if (side == 'b')
+		write(1, "pb\n", 3);
+	i = size;
+	while (--i >= 0)
+		*(to + (i + 1)) = *(to + i);
+	*to = *from;
+	i = -1;
+	while (++i != size)
+		*(from + i) = *(from + (i + 1));
+
 }
 
 void	rotate(int *stack, int size, char side)
@@ -33,11 +56,32 @@ void	rotate(int *stack, int size, char side)
 	int i;
 
 	if (side == 'a')
-		write(1, "ra", 2);
+		write(1, "ra\n", 3);
 	else if (side == 'b')
-		write(1, "rb", 2);
+		write(1, "rb\n", 3);
+	else if (side == 's')
+		write(1, "rr\n", 3);
 	tmp = *stack;
-	i = 0;
-	while (i != size)
+	i = -1;
+	while (++i != size)
 		*(stack + i) = *(stack + (i + 1));
+	*(stack + (size - 1)) = tmp;
+}
+
+void	r_rotate(int *stack, int size, char side)
+{
+	int tmp;
+	int i;
+
+	if (side == 'a')
+		write(1, "rra\n", 4);
+	else if (side == 'b')
+		write(1, "rrb\n", 4);
+	else if (side == 's')
+		write(1, "rrr\n", 4);
+	tmp = *(stack + (size - 1));
+	i = size;
+	while (--i >= 0)
+		*(stack + (i + 1)) = *(stack + i);
+	*stack = tmp;
 }
