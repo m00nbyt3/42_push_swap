@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg35.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:45:55 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/09 14:16:32 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/11 12:40:54 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	algof2(int *nums);
 void	algof31(int *nums, int size);
 void	algof32(int *nums, int size);
-void	algof4(void *load);
+void	algof4(t_stack *stack);
+void	algof5(t_stack *stack);
 
 void	algof2(int *nums)
 {
@@ -58,32 +59,45 @@ void	algof32(int *nums, int size)
 	}
 }
 
-void	algof4(void *load)
+void	algof4(t_stack *stack)
 {
-	t_stack *stack;
 	int moves;
 
-	stack = (t_stack *)load;
-	moves = slower(stack->a, stack->size);
+	moves = slower(stack->a, stack->a_size);
 	if (moves > 0)
-	{
 		while(moves--)
-			rotate(stack->a, stack->size, 'a');
-	}
+			rotate(stack->a, stack->a_size, 'a');
 	else
-	{
 		while(moves++)
-			r_rotate(stack->a, stack->size, 'a');
-	}
-	printf("%d\n", *(stack->a));
-	push(stack->a, stack->b, stack->size, 'b');
-	printf("\n\n\n%d\n", *(stack->a));
-	printf("%d\n", *((stack->a) + 1));
-	printf("%d\n", *((stack->a) + 2));
-	printf("%d\n\n\n", *((stack->a) + 3));
-	algof31(stack->a, stack->size);
-	printf("\n\n\n%d\n", *(stack->a));
-	printf("%d\n", *((stack->a) + 1));
-	printf("%d\n\n\n", *((stack->a) + 2));
-	push(stack->b, stack->a, stack->size, 'a');
+			r_rotate(stack->a, stack->a_size, 'a');
+	push(stack, 'b');
+	algof31(stack->a, stack->a_size);
+	push(stack, 'a');
+}
+
+void	algof5(t_stack *stack)
+{
+	int	moves;
+
+	moves = slower(stack->a, stack->a_size);
+	if (moves > 0)
+		while(moves--)
+			rotate(stack->a, stack->a_size, 'a');
+	else
+		while(moves++)
+			r_rotate(stack->a, stack->a_size, 'a');
+	push(stack, 'b');
+	moves = slower(stack->a, stack->a_size);
+	if (moves > 0)
+		while(moves--)
+			rotate(stack->a, stack->a_size, 'a');
+	else
+		while(moves++)
+			r_rotate(stack->a, stack->a_size, 'a');
+	push(stack, 'b');
+	if (*(stack->b) < *((stack->b) + 1))
+		swap(stack->b, 'b');
+	algof31(stack->a, stack->a_size);
+	push(stack, 'a');
+	push(stack, 'a');
 }

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:40:40 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/05 11:40:48 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/11 12:12:22 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 void	swap(int *stack, char side);
-void	push(int *from, int *to, int size, char side);
+void	push(t_stack *stack, char side);
 void	rotate(int *stack, int size, char side);
 void	r_rotate(int *stack, int size, char side);
 
@@ -32,20 +32,34 @@ void	swap(int *stack, char side)
 	*(stack + 1) = tmp;
 }
 
-void	push(int *from, int *to, int size, char side)
+void	push(t_stack *stack, char side)
 {
 	int	i;
+	int j;
+	int *to;
+	int *from;
 
 	if (side == 'a')
+	{
 		write(1, "pa\n", 3);
+		to = stack->a;
+		from = stack->b;
+		i = stack->a_size++;
+		j = stack->b_size--;
+	}
 	else if (side == 'b')
+	{
 		write(1, "pb\n", 3);
-	i = size;
+		to = stack->b;
+		from = stack->a;
+		i = stack->b_size++;
+		j = stack->a_size--;
+	}
 	while (--i >= 0)
 		*(to + (i + 1)) = *(to + i);
 	*to = *from;
 	i = -1;
-	while (++i != size)
+	while (++i != j)
 		*(from + i) = *(from + (i + 1));
 
 }

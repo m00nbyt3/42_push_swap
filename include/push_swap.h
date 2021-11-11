@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/09 14:05:53 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/11 13:05:48 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,15 @@ typedef struct s_stack
 {
 	int	*a;
 	int	*b;
-	int size;
+	int a_size;
+	int b_size;
 }				t_stack;
+
+typedef struct s_args
+{
+	int num;
+	int size;
+}				t_args;
 
 //Functions
 //------------------------------------------------------
@@ -33,23 +40,25 @@ typedef struct s_stack
 void	setstack(int *save, char **list, int count);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
-void	lowerarg(void *load, int argc);
+void	lowerarg(t_stack *stack, int argc);
 int		slower(int *nums,  int size);
 int		sbigger(int *nums,  int size);
 
 //Algs
+void	algof2(int *nums);
 void	algof31(int *nums, int size);
 void	algof32(int *nums, int size);
-void	algof4(void *load);
+void	algof4(t_stack *stack);
+void	algof5(t_stack *stack);
 
 //Operations
 void	swap(int *stack, char side);
-void	push(int *from, int *to, int size, char side);
+void	push(t_stack *stack, char side);
 void	rotate(int *stack, int size, char side);
 void	r_rotate(int *stack, int size, char side);
-void	ss(void *load);
-void	rr(void *load);
-void	rrr(void *load);
+void	ss(t_stack *stack);
+void	rr(t_stack *stack);
+void	rrr(t_stack *stack);
 
 //Errores
 int		error(char *err);

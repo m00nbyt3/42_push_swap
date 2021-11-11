@@ -3,43 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   opdouble.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:37:36 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/05 11:26:02 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/11 12:14:42 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void ss(void *load);
-void rr(void *load);
-void rrr(void *load);
+void	ss(t_stack *stack);
+void	rr(t_stack *stack);
+void	rrr(t_stack *stack);
 
-void ss(void *load)
+void ss(t_stack *stack)
 {
-	t_stack *stack;
-
-	stack = (t_stack *)load;
 	swap(stack->a, 's');
 	swap(stack->b, 'x');
 
 }
 
-void rr(void *load)
+void rr(t_stack *stack)
 {
-	t_stack *stack;
-
-	stack = (t_stack *)load;
-	rotate(stack->a, stack->size, 's');
-	rotate(stack->b, stack->size, 'x');
+	rotate(stack->a, stack->a_size, 's');
+	rotate(stack->b, stack->b_size, 'x');
 }
 
-void rrr(void *load)
+void rrr(t_stack *stack)
 {
-	t_stack *stack;
-
-	stack = (t_stack *)load;
-	r_rotate(stack->a, stack->size, 's');
-	r_rotate(stack->b, stack->size, 'x');
+	r_rotate(stack->a, stack->a_size, 's');
+	r_rotate(stack->b, stack->b_size, 'x');
 }
