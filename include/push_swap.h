@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/11 13:05:48 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/19 12:35:50 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 
 typedef struct s_args
 {
-	int num;
+	int *nums;
 	int size;
 }				t_args;
 
@@ -61,7 +61,7 @@ void	rr(t_stack *stack);
 void	rrr(t_stack *stack);
 
 //Errores
-int		error(char *err);
+int		error();
 
 //------------------------------------------------------
 

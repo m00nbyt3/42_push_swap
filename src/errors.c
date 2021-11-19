@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 13:54:28 by ycarro            #+#    #+#             */
-/*   Updated: 2021/10/28 13:58:36 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/17 15:48:04 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	error(char *err)
+int	error()
 {
-	printf("ERROR:\n %s\n", err);
-	return (0);
+	printf("Error\n");
+	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/11 13:04:00 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/17 14:23:00 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ int main(int argc, char **argv)
 		return (error("No arguments passed!"));
 	/*if (!checkargs(argv))
 		return (error("Invalid arguments!"));*/
-	stack.a_size = argc - 1;
+	/*stack.a_size = argc - 1;
 	stack.b_size = 0;
 	stack.a = malloc((stack.a_size) * sizeof(int));
 	stack.b = malloc((stack.a_size) * sizeof(int));
-	setstack(stack.a, argv + 1, stack.a_size);
+	setstack(stack.a, argv + 1, stack.a_size);*/
+	stack.a = malloc(ft_split(argv, ' ') * sizeof(int));
 	printf("\nIt is better: %d \n\n", slower(stack.a, stack.a_size));
 	lowerarg(&stack, argc);
 
