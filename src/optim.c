@@ -1,19 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   optim.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 13:54:28 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/24 12:41:14 by ycarro           ###   ########.fr       */
+/*   Created: 2021/11/23 11:41:23 by ycarro            #+#    #+#             */
+/*   Updated: 2021/11/24 15:41:52 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	error()
+int		howmuch(int *nums, int max, int size);
+
+int howmuch(int *nums, int max, int size)
 {
-	printf("Error\n");
-	exit(0);
+	int	norm;
+	int	rev;
+	int	i;
+
+	norm = 0;
+	i = -1;
+	while (++i < size)
+		if (nums[i] < max)
+			norm = i;
+	i = size;
+	while (--i > -1)
+		if (nums[i] < max)
+			rev = size - i;
+	if (--rev < norm)
+		return (-1);
+	else
+		return (1);
 }

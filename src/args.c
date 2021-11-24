@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:07:44 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/19 15:51:50 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/24 13:44:37 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	checkargs(int argc, char **argv, t_args *arr);
 void	divide(char *line, t_args *arr);
 int		ft_atoi(const char *str);
 void	save(char *str, t_args *arr);
-int		main(int argc, char **argv);
+//int		main(int argc, char **argv);
 
 
 void	checkargs(int argc, char **argv, t_args *arr)
@@ -54,7 +54,10 @@ void	divide(char *line, t_args *arr)
 
 	tmp = line;
 	if (*(line) != ' ')
+	{
 		arr->size++;
+		save(line, arr);
+	}
 	while (*line)
 	{
 		if (*line == ' ' && *(line + 1) != ' ')
@@ -65,7 +68,6 @@ void	divide(char *line, t_args *arr)
 			}
 		line++;
 	}
-	arr->size--;
 }
 
 int	ft_atoi(const char *str)
@@ -80,14 +82,13 @@ int	ft_atoi(const char *str)
 		if (*str == '-')
 			sign = -1;
 		str++;
+		if (*str < '0' || *str > '9')
+			error();
 	}
 	while (*str && *str != ' ')
 	{
 		if (*str < '0' || *str > '9')
-		{
-			printf("/%c/\n", *str);
 			error();
-		}
 		num = (num * 10) + (*str - '0');
 		str++;
 	}
@@ -99,24 +100,19 @@ void save(char *str, t_args *arr)
 	int *tmp;
 	int	i;
 
-	//num = ft_atoi(str);
 	tmp = malloc((arr->size) * sizeof(int));
 	i = -1;
 	if (arr->size > 1)
 	{
-		while (arr->nums[++i])
-		{
-			//printf("--%d--\n", arr->nums[i]);
+		while (++i < arr->size)
 			tmp[i] = arr->nums[i];
-		}
 		free(arr->nums);
 	}
 	tmp[arr->size - 1] = ft_atoi(str);
 	arr->nums = tmp;
-	//return (arr->size);
 }
 
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
 	t_args arr;
 	int i;
@@ -134,4 +130,4 @@ int main(int argc, char **argv)
 
 	printf("END\n");
 	return 0;
-}
+}*/

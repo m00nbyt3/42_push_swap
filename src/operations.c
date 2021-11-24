@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:40:40 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/11 12:12:22 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/23 11:00:12 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	push(t_stack *stack, char side)
 	int *to;
 	int *from;
 
+	i = 0;
 	if (side == 'a')
 	{
 		write(1, "pa\n", 3);
@@ -94,7 +95,7 @@ void	r_rotate(int *stack, int size, char side)
 	else if (side == 's')
 		write(1, "rrr\n", 4);
 	tmp = *(stack + (size - 1));
-	i = size;
+	i = (size - 1);
 	while (--i >= 0)
 		*(stack + (i + 1)) = *(stack + i);
 	*stack = tmp;

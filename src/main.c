@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/17 14:23:00 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:18:35 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,32 @@
 
 #include "../include/push_swap.h"
 
-void	setstack(int *save, char **list, int count);
-void	lowerarg(t_stack *stack, int argc);
+void	lowerarg(t_stack *stack);
 
 int main(int argc, char **argv)
 {
 	t_stack stack;
+	t_args	args;
 
 	if (argc < 2)
 		return (error("No arguments passed!"));
-	/*if (!checkargs(argv))
-		return (error("Invalid arguments!"));*/
-	/*stack.a_size = argc - 1;
+	checkargs(argc, argv, &args);
+	stack.a = args.nums;
+	stack.a_size = args.size;
+	makedummy(&stack);
+	//printf("Num: %d\nSize: %d\n", args.nums[1], args.size);
+	stack.b = malloc(args.size * sizeof(int));
 	stack.b_size = 0;
-	stack.a = malloc((stack.a_size) * sizeof(int));
-	stack.b = malloc((stack.a_size) * sizeof(int));
-	setstack(stack.a, argv + 1, stack.a_size);*/
-	stack.a = malloc(ft_split(argv, ' ') * sizeof(int));
-	printf("\nIt is better: %d \n\n", slower(stack.a, stack.a_size));
-	lowerarg(&stack, argc);
+	//printf("\nIt is better: %d \n\n", slower(stack.a, stack.a_size));
+	//partit(&stack);
+	lowerarg(&stack);
 
 	//For testing
 	/*if (argc == 4)
 		algof31(stack.a, stack.size);
 	if (argc == 5)
 		al*/
+	/*printf("\nSIZE: %d\n", stack.a_size);
 	int i = 0;
 	int suck = stack.a_size;
 	printf("\n");
@@ -48,35 +49,32 @@ int main(int argc, char **argv)
 	while(suck--)
 		printf("%d\n", *(stack.a + i++));
 	printf("-----------\n\n\n");
+	if (stack.b_size)
+		printf("B stack not cleaned!\n");
 	printf("-----B-----:\n");
 	i = 0;
 	suck = stack.b_size;
 	while(suck--)
 		printf("%d\n", *(stack.b + i++));
-	printf("-----------\n\n\n");
+	printf("-----------\n\n\n");*/
+
 	free(stack.a);
 	free(stack.b);
 }
 
-
-void	setstack(int *save, char **list, int count)
-{
-	while (count--)
-		*(save++) = ft_atoi(*(list++));
-}
-
-void	lowerarg(t_stack *stack, int argc)
+void	lowerarg(t_stack *stack)
 {
 	//t_stack *stack;
 
 	//stack = (t_stack *)load;
-	if (argc == 3)
+	if (stack->a_size == 2)
 		algof2(stack->a);
-	else if (argc == 4)
+	else if (stack->a_size == 3)
 		algof31(stack->a, stack->a_size);
-	else if (argc == 5)
+	else if (stack->a_size == 4)
 		algof4(stack);
-	else if (argc == 6)
+	else if (stack->a_size == 5)
 		algof5(stack);
-
+	else if (stack->a_size < 101)
+		sandw(stack, 7);
 }

@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/19 12:35:50 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:11:48 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack
 {
 	int	*a;
 	int	*b;
+	int *ordered;
 	int a_size;
 	int b_size;
 }				t_stack;
@@ -37,12 +38,20 @@ typedef struct s_args
 //Functions
 //------------------------------------------------------
 //Basics
-void	setstack(int *save, char **list, int count);
-int		ft_atoi(const char *str);
-int		ft_isdigit(int c);
-void	lowerarg(t_stack *stack, int argc);
+void	lowerarg(t_stack *stack);
 int		slower(int *nums,  int size);
 int		sbigger(int *nums,  int size);
+int		rlower(int *nums,  int min, int max, int size);
+void	checkargs(int argc, char **argv, t_args *arr);
+void	divide(char *line, t_args *arr);
+int		ft_atoi(const char *str);
+void	save(char *str, t_args *arr);
+void	partit(t_stack *stack);
+int		schmid(t_stack *stack);
+int		howmuch(int *nums, int max, int size);
+void	sandw(t_stack *stack, int div);
+void	bread(t_stack *stack);
+void	reset(t_stack *stack);
 
 //Algs
 void	algof2(int *nums);
@@ -59,6 +68,10 @@ void	r_rotate(int *stack, int size, char side);
 void	ss(t_stack *stack);
 void	rr(t_stack *stack);
 void	rrr(t_stack *stack);
+
+//Utils
+void	ft_sort_int_tab(int *tab, int size);
+void	makedummy(t_stack *stack);
 
 //Errores
 int		error();

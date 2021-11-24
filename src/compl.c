@@ -3,46 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   compl.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42madrid.com>       +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 13:45:34 by ycarro            #+#    #+#             */
-/*   Updated: 2021/10/28 13:52:30 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/24 15:41:56 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_atoi(const char *str);
-int	ft_isdigit(int c);
+void	arrcpy(int *org, int *dst, int size);
+void	ft_sort_int_tab(int *tab, int size);
+void	makedummy(t_stack *stack);
 
-int	ft_atoi(const char *str)
+void	arrcpy(int *org, int *dst, int size)
 {
-	int				sign;
-	long long		num;
-
-	sign = 1;
-	num = 0;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (ft_isdigit((int)*str))
+	dst = malloc(size * sizeof(int));
+	while  (size--)
 	{
-		num = (num * 10) + (*str - '0');
-		if ((num * sign) > INT_MAX)
-			return (-1);
-		else if ((num * sign) < INT_MIN)
-			return (0);
-		str++;
+		*dst = *org;
+		org++;
+		dst++;
 	}
-	return (num * sign);
 }
 
-int	ft_isdigit(int c)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	if (c < '0' || c > '9')
-		return (0);
-	return (1);
+	int	i;
+	int	j;
+	int tmp;
+
+	i = 0;
+	while (i < (size - 1))
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+				{
+					tmp = tab[i];
+					tab[i] = tab[j];
+					tab[j] = tmp;
+				}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	makedummy(t_stack *stack)
+{
+	int	size;
+	int	i;
+
+	size = stack->a_size;
+	stack->ordered = malloc(size * sizeof(int));
+	i = -1;
+	while (++i < size)
+		stack->ordered[i] =stack->a[i];
+	ft_sort_int_tab(stack->ordered, stack->a_size);
 }
