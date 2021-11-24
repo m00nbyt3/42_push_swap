@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:50:22 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/24 16:13:46 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:29:06 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 void	sandw(t_stack *stack, int div);
 void	bread(t_stack *stack);
-void 	partit(t_stack *stack);
-int		schmid(t_stack *stack);
-void	reset(t_stack *stack);
 
-
-//NEW METHOD
 void	sandw(t_stack *stack, int div)
 {
 	int ndata;
@@ -64,46 +59,4 @@ void	bread(t_stack *stack)
 				r_rotate(stack->b, stack->b_size, 'b');
 		push(stack, 'a');
 	}
-}
-void	reset(t_stack *stack)
-{
-	int tot;
-	int	moves;
-
-	tot = stack->b_size;
-	moves = -1;
-	while (++moves < tot)
-		push(stack, 'a');
-}
-
-//OLD METHOD
-void	partit(t_stack *stack)
-{
-	int	mid;
-	int	count;
-	
-	mid = schmid(stack);
-	printf("\nMID: %d\n\n", mid);
-	count = 0;
-	//Ver pasos optimos up or down en optim.c
-	//howmuch(stack->a, mid, stack->a_size);
-	/*while (count != mid)
-	{
-		if (stack.->a[0] < mid)
-	}*/
-	
-}
-
-int	schmid(t_stack *stack)
-{
-	int	size;
-	int	i;
-
-	size = stack->a_size;
-	stack->ordered = malloc(size * sizeof(int));
-	i = -1;
-	while (++i < size)
-		stack->ordered[i] =stack->a[i];
-	ft_sort_int_tab(stack->ordered, stack->a_size);
-	return(stack->ordered[stack->a_size / 2]);
 }

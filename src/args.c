@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:07:44 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/24 13:44:37 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:29:25 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,23 +111,3 @@ void save(char *str, t_args *arr)
 	tmp[arr->size - 1] = ft_atoi(str);
 	arr->nums = tmp;
 }
-
-/*int main(int argc, char **argv)
-{
-	t_args arr;
-	int i;
-
-	checkargs(argc, argv, &arr);
-	printf("\nSIZE: %d\n", arr.size);
-	printf("\n\nList:\n");
-	i = arr.size;
-	while (i--)
-	{
-		printf("%d\n", *arr.nums);
-		arr.nums++;
-	}
-
-
-	printf("END\n");
-	return 0;
-}*/

@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/24 16:11:48 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:35:26 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,8 @@ void	checkargs(int argc, char **argv, t_args *arr);
 void	divide(char *line, t_args *arr);
 int		ft_atoi(const char *str);
 void	save(char *str, t_args *arr);
-void	partit(t_stack *stack);
-int		schmid(t_stack *stack);
-int		howmuch(int *nums, int max, int size);
 void	sandw(t_stack *stack, int div);
 void	bread(t_stack *stack);
-void	reset(t_stack *stack);
 
 //Algs
 void	algof2(int *nums);
