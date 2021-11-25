@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/24 16:31:18 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/25 13:24:46 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,26 @@ int main(int argc, char **argv)
 	lowerarg(&stack);
 
 	//For testing -----------------------------
-	/*printf("\nSIZE: %d\n", stack.a_size);
-	int i = 0;
-	int suck = stack.a_size;
-	printf("\n");
-	printf("-----A-----:\n");
-	while(suck--)
-		printf("%d\n", *(stack.a + i++));
-	printf("-----------\n\n\n");
-	if (stack.b_size)
-		printf("B stack not cleaned!\n");
-	printf("-----B-----:\n");
-	i = 0;
-	suck = stack.b_size;
-	while(suck--)
-		printf("%d\n", *(stack.b + i++));
-	printf("-----------\n\n\n");*/
+	int testing = 0;
+	if (testing == 1)
+	{
+		printf("\nSIZE: %d\n", stack.a_size);
+		int i = 0;
+		int suck = stack.a_size;
+		printf("\n");
+		printf("-----A-----:\n");
+		while(suck--)
+			printf("%d\n", *(stack.a + i++));
+		printf("-----------\n\n\n");
+		if (stack.b_size)
+			printf("B stack not cleaned!\n");
+		printf("-----B-----:\n");
+		i = 0;
+		suck = stack.b_size;
+		while(suck--)
+			printf("%d\n", *(stack.b + i++));
+		printf("-----------\n\n\n");
+	}
 	//------------------------------------------
 
 	free(stack.a);
@@ -69,5 +73,5 @@ void	lowerarg(t_stack *stack)
 	else if (stack->a_size < 101)
 		sandw(stack, 8);
 	else
-		sandw(stack, 14);
+		sandw(stack, 12);
 }

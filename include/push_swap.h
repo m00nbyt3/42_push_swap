@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/24 16:35:26 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/25 12:59:47 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_stack
 	int *ordered;
 	int a_size;
 	int b_size;
+	int o_size;
 }				t_stack;
 
 typedef struct s_args
@@ -41,13 +42,11 @@ typedef struct s_args
 void	lowerarg(t_stack *stack);
 int		slower(int *nums,  int size);
 int		sbigger(int *nums,  int size);
-int		rlower(int *nums,  int min, int max, int size);
+int		inrange(int *nums,  int min, int max, int size);
 void	checkargs(int argc, char **argv, t_args *arr);
 void	divide(char *line, t_args *arr);
 int		ft_atoi(const char *str);
 void	save(char *str, t_args *arr);
-void	sandw(t_stack *stack, int div);
-void	bread(t_stack *stack);
 
 //Algs
 void	algof2(int *nums);
@@ -55,6 +54,10 @@ void	algof31(int *nums, int size);
 void	algof32(int *nums, int size);
 void	algof4(t_stack *stack);
 void	algof5(t_stack *stack);
+void	sandw(t_stack *stack, int div);
+void	bread(t_stack *stack);
+void	sesame(t_stack *stack);
+void	dbingr(t_stack *stack, int ndata, int *grow);
 
 //Operations
 void	swap(int *stack, char side);

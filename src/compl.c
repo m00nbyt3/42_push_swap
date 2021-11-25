@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 13:45:34 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/24 15:41:56 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/25 12:47:18 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	makedummy(t_stack *stack)
 	stack->ordered = malloc(size * sizeof(int));
 	i = -1;
 	while (++i < size)
-		stack->ordered[i] =stack->a[i];
+		stack->ordered[i] = stack->a[i];
 	ft_sort_int_tab(stack->ordered, stack->a_size);
+	stack->o_size = size;
 }

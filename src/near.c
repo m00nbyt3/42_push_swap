@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 12:58:25 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/24 15:18:57 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/25 13:18:17 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ int	sbigger(int *nums,  int size)
 		return(upos);
 }
 
-int	rlower(int *nums,  int min, int max, int size)
+int	inrange(int *nums,  int min, int max, int size)
 {
 	int upos;
 	int dpos;
 	int i;
 
-	i = 0;
+	i = -1;
 	upos = i;
 	while (++i < size)
 		if (nums[i] >= min && nums[i] < max)
@@ -76,7 +76,7 @@ int	rlower(int *nums,  int min, int max, int size)
 			upos = i;
 			break;
 		}
-	i = size - 1;
+	i = size;
 	dpos = i;
 	while (--i >= 0)
 		if (nums[i] >= min && nums[i] < max)
