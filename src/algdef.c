@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:50:22 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/25 13:23:54 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/26 13:07:05 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	sandw(t_stack *stack, int div)
 			}
 		j++;
 	}
+	while (stack->a_size)
+		push(stack, 'b');
 	bread(stack);
 }
 

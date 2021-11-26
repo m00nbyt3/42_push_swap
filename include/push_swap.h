@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/25 12:59:47 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/26 15:36:03 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ void	ft_sort_int_tab(int *tab, int size);
 void	makedummy(t_stack *stack);
 
 //Errores
-int		error();
+int		error(void);
+void	check_reps(int *nums, int size);
 
 //------------------------------------------------------
 

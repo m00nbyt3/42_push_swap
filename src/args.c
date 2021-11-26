@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:07:44 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/24 16:29:25 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/26 13:13:38 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	checkargs(int argc, char **argv, t_args *arr);
 void	divide(char *line, t_args *arr);
 int		ft_atoi(const char *str);
 void	save(char *str, t_args *arr);
-//int		main(int argc, char **argv);
-
 
 void	checkargs(int argc, char **argv, t_args *arr)
 {

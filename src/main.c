@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/25 13:24:46 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/26 15:42:01 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ int main(int argc, char **argv)
 	t_args	args;
 
 	if (argc < 2)
-		return (error("No arguments passed!"));
+		error();
+	stack.a_size = -1;
 	checkargs(argc, argv, &args);
 	stack.a = args.nums;
 	stack.a_size = args.size;
+	check_reps(stack.a, stack.a_size);
 	makedummy(&stack);
 	stack.b = malloc(args.size * sizeof(int));
 	stack.b_size = 0;
