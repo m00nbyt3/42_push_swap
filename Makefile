@@ -6,17 +6,17 @@
 #    By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 10:43:16 by ycarro            #+#    #+#              #
-#    Updated: 2021/12/10 12:31:45 by ycarro           ###   ########.fr        #
+#    Updated: 2021/12/10 15:41:05 by ycarro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME := push_swap
 
-CC = gcc
+CC := gcc
 
-HDIR = include/
-INCLUDE =  -I $(HDIR)
+HDIR := include/
+INCLUDE :=  -I $(HDIR)
 HEADERFILES := include/push_swap.h
 
 SRCFILES := alg35.c \
@@ -31,7 +31,7 @@ SRCFILES := alg35.c \
 
 OBJFILES := $(SRCFILES:%.c=obj/%.o)
 
-CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
+CFLAGS := -Wall -Wextra -Werror $(INCLUDE)
 
 all: $(NAME)
 
