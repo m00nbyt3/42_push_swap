@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:45:55 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/23 11:02:13 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/30 11:01:10 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ void	algof32(int *nums, int size)
 
 void	algof4(t_stack *stack)
 {
-	int moves;
+	int	moves;
 
 	moves = slower(stack->a, stack->a_size);
 	if (moves > 0)
-		while(moves--)
+		while (moves--)
 			rotate(stack->a, stack->a_size, 'a');
 	else
-		while(moves++)
+		while (moves++)
 			r_rotate(stack->a, stack->a_size, 'a');
 	push(stack, 'b');
 	algof31(stack->a, stack->a_size);
@@ -81,18 +81,18 @@ void	algof5(t_stack *stack)
 
 	moves = slower(stack->a, stack->a_size);
 	if (moves > 0)
-		while(moves--)
+		while (moves--)
 			rotate(stack->a, stack->a_size, 'a');
 	else
-		while(moves++)
+		while (moves++)
 			r_rotate(stack->a, stack->a_size, 'a');
 	push(stack, 'b');
 	moves = slower(stack->a, stack->a_size);
 	if (moves > 0)
-		while(moves--)
+		while (moves--)
 			rotate(stack->a, stack->a_size, 'a');
 	else
-		while(moves++)
+		while (moves++)
 			r_rotate(stack->a, stack->a_size, 'a');
 	push(stack, 'b');
 	if (*(stack->b) < *((stack->b) + 1))

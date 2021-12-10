@@ -6,21 +6,17 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/26 15:42:01 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/30 11:33:11 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-//Mirar los tamanos de los stack VAN CAMBIANDO !!!
-
 
 #include "../include/push_swap.h"
 
 void	lowerarg(t_stack *stack);
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack stack;
+	t_stack	stack;
 	t_args	args;
 
 	if (argc < 2)
@@ -34,30 +30,6 @@ int main(int argc, char **argv)
 	stack.b = malloc(args.size * sizeof(int));
 	stack.b_size = 0;
 	lowerarg(&stack);
-
-	//For testing -----------------------------
-	int testing = 0;
-	if (testing == 1)
-	{
-		printf("\nSIZE: %d\n", stack.a_size);
-		int i = 0;
-		int suck = stack.a_size;
-		printf("\n");
-		printf("-----A-----:\n");
-		while(suck--)
-			printf("%d\n", *(stack.a + i++));
-		printf("-----------\n\n\n");
-		if (stack.b_size)
-			printf("B stack not cleaned!\n");
-		printf("-----B-----:\n");
-		i = 0;
-		suck = stack.b_size;
-		while(suck--)
-			printf("%d\n", *(stack.b + i++));
-		printf("-----------\n\n\n");
-	}
-	//------------------------------------------
-
 	free(stack.a);
 	free(stack.b);
 }

@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 13:45:34 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/25 12:47:18 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/30 11:31:50 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	makedummy(t_stack *stack);
 void	arrcpy(int *org, int *dst, int size)
 {
 	dst = malloc(size * sizeof(int));
-	while  (size--)
+	while (size--)
 	{
 		*dst = *org;
 		org++;
@@ -31,7 +31,7 @@ void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
 	int	j;
-	int tmp;
+	int	tmp;
 
 	i = 0;
 	while (i < (size - 1))
@@ -40,11 +40,11 @@ void	ft_sort_int_tab(int *tab, int size)
 		while (j < size)
 		{
 			if (tab[i] > tab[j])
-				{
-					tmp = tab[i];
-					tab[i] = tab[j];
-					tab[j] = tmp;
-				}
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
 			j++;
 		}
 		i++;

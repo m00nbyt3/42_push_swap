@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:07:44 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/26 13:13:38 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/11/30 11:31:10 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	save(char *str, t_args *arr);
 
 void	checkargs(int argc, char **argv, t_args *arr)
 {
-	int		tmp;
-	int		i;
-	int 	mult;
+	int	tmp;
+	int	i;
+	int	mult;
 
 	arr->size = 0;
 	tmp = 0;
@@ -35,7 +35,7 @@ void	checkargs(int argc, char **argv, t_args *arr)
 			{
 				divide(argv[tmp], arr);
 				mult++;
-				break;
+				break ;
 			}
 		}
 		if (!mult)
@@ -48,7 +48,7 @@ void	checkargs(int argc, char **argv, t_args *arr)
 
 void	divide(char *line, t_args *arr)
 {
-	char *tmp;
+	char	*tmp;
 
 	tmp = line;
 	if (*(line) != ' ')
@@ -59,11 +59,13 @@ void	divide(char *line, t_args *arr)
 	while (*line)
 	{
 		if (*line == ' ' && *(line + 1) != ' ')
+		{
 			if (*(line + 1))
 			{
 				arr->size++;
 				save(line + 1, arr);
 			}
+		}
 		line++;
 	}
 }
@@ -93,9 +95,9 @@ int	ft_atoi(const char *str)
 	return (num * sign);
 }
 
-void save(char *str, t_args *arr)
+void	save(char *str, t_args *arr)
 {
-	int *tmp;
+	int	*tmp;
 	int	i;
 
 	tmp = malloc((arr->size) * sizeof(int));

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/26 15:36:03 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 10:37:33 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,26 @@ typedef struct s_stack
 {
 	int	*a;
 	int	*b;
-	int *ordered;
-	int a_size;
-	int b_size;
-	int o_size;
+	int	*ordered;
+	int	a_size;
+	int	b_size;
+	int	o_size;
 }				t_stack;
 
 typedef struct s_args
 {
-	int *nums;
-	int size;
+	int	*nums;
+	int	size;
 }				t_args;
 
 //Functions
 //------------------------------------------------------
 //Basics
 void	lowerarg(t_stack *stack);
-int		slower(int *nums,  int size);
-int		sbigger(int *nums,  int size);
-int		inrange(int *nums,  int min, int max, int size);
+int		slower(int *nums, int size);
+int		sbigger(int *nums, int size);
+int		inrange(int *nums, int min, int max, int size);
+int		betterstart(int upos, int dpos, int size);
 void	checkargs(int argc, char **argv, t_args *arr);
 void	divide(char *line, t_args *arr);
 int		ft_atoi(const char *str);
@@ -62,6 +63,7 @@ void	dbingr(t_stack *stack, int ndata, int *grow);
 //Operations
 void	swap(int *stack, char side);
 void	push(t_stack *stack, char side);
+void	push2(int *to, int *from, int i, int j);
 void	rotate(int *stack, int size, char side);
 void	r_rotate(int *stack, int size, char side);
 void	ss(t_stack *stack);
