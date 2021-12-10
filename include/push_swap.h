@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/10 10:37:33 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 15:22:02 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		inrange(int *nums, int min, int max, int size);
 int		betterstart(int upos, int dpos, int size);
 void	checkargs(int argc, char **argv, t_args *arr);
 void	divide(char *line, t_args *arr);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str, int *arr);
 void	save(char *str, t_args *arr);
 
 //Algs
@@ -76,6 +76,7 @@ void	makedummy(t_stack *stack);
 
 //Errores
 int		error(void);
+int		error_free(int *arr);
 void	check_reps(int *nums, int size);
 
 //------------------------------------------------------

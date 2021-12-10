@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/10 13:07:01 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 15:29:29 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 	lowerarg(&stack);
 	free(stack.a);
 	free(stack.b);
+	free(stack.ordered);
 	return (0);
 }
 

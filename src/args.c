@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:07:44 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/10 12:54:15 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 15:22:55 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	checkargs(int argc, char **argv, t_args *arr);
 void	divide(char *line, t_args *arr);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str, int *arr);
 void	save(char *str, t_args *arr);
 
 void	checkargs(int argc, char **argv, t_args *arr)
@@ -70,35 +70,40 @@ void	divide(char *line, t_args *arr)
 	}
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str, int *arr)
 {
-	int	sign;
-	int	num;
+	int		sign;
+	long	num;
+	int		err;
 
 	sign = 1;
 	num = 0;
+	err = 0;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			sign = -1;
 		str++;
 		if (*str < '0' || *str > '9')
-			error();
+			err++;
 	}
 	while (*str && *str != ' ')
 	{
 		if (*str < '0' || *str > '9')
-			error();
+			err++;
 		num = (num * 10) + (*str - '0');
 		str++;
 	}
+	if (err)
+		error_free(arr);
 	return (num * sign);
 }
 
 void	save(char *str, t_args *arr)
 {
-	int	*tmp;
-	int	i;
+	int		*tmp;
+	int		i;
+	long	num;
 
 	tmp = malloc((arr->size) * sizeof(int));
 	i = -1;
@@ -108,6 +113,9 @@ void	save(char *str, t_args *arr)
 			tmp[i] = arr->nums[i];
 		free(arr->nums);
 	}
-	tmp[arr->size - 1] = ft_atoi(str);
+	num = ft_atoi(str, tmp);
+	if (num > INT_MAX || num < INT_MIN)
+		error_free(tmp);
+	tmp[arr->size - 1] = (int)num;
 	arr->nums = tmp;
 }
