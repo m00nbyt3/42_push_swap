@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   near.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 12:58:25 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/30 12:15:07 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 11:38:33 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 int	slower(int *nums, int size);
 int	sbigger(int *nums, int size);

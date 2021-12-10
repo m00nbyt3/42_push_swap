@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:07:44 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/30 11:31:10 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 12:54:15 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	checkargs(int argc, char **argv, t_args *arr);
 void	divide(char *line, t_args *arr);
@@ -104,7 +104,7 @@ void	save(char *str, t_args *arr)
 	i = -1;
 	if (arr->size > 1)
 	{
-		while (++i < arr->size)
+		while (++i < (arr->size - 1))
 			tmp[i] = arr->nums[i];
 		free(arr->nums);
 	}

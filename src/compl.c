@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   compl.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 13:45:34 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/30 11:31:50 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 11:38:22 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	arrcpy(int *org, int *dst, int size);
 void	ft_sort_int_tab(int *tab, int size);

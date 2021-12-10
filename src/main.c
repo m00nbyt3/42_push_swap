@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/30 11:33:11 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 13:07:01 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	lowerarg(t_stack *stack);
 
@@ -32,10 +32,13 @@ int	main(int argc, char **argv)
 	lowerarg(&stack);
 	free(stack.a);
 	free(stack.b);
+	return (0);
 }
 
 void	lowerarg(t_stack *stack)
 {
+	if (stack->a_size == 1)
+		return ;
 	if (stack->a_size == 2)
 		algof2(stack->a);
 	else if (stack->a_size == 3)

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:40:40 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/30 12:14:28 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 13:02:16 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	swap(int *stack, char side);
 void	push(t_stack *stack, char side);
@@ -66,7 +66,7 @@ void	push2(int *to, int *from, int i, int j)
 		*(to + (i + 1)) = *(to + i);
 	*to = *from;
 	i = -1;
-	while (++i != j)
+	while (++i != (j - 1))
 		*(from + i) = *(from + (i + 1));
 }
 
@@ -83,7 +83,7 @@ void	rotate(int *stack, int size, char side)
 		write(1, "rr\n", 3);
 	tmp = *stack;
 	i = -1;
-	while (++i != size)
+	while (++i != (size - 1))
 		*(stack + i) = *(stack + (i + 1));
 	*(stack + (size - 1)) = tmp;
 }

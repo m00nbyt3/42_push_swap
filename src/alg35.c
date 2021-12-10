@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   alg35.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycarro <ycarro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:45:55 by ycarro            #+#    #+#             */
-/*   Updated: 2021/11/30 11:01:10 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/10 11:38:11 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
 void	algof2(int *nums);
 void	algof31(int *nums, int size);
