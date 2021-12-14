@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:07:44 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/14 11:31:19 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/14 12:29:25 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	divide(char *line, t_args *arr)
 {
 	char	*tmp;
 
+	check_empty(arr, line);
 	tmp = line;
 	if (*(line) != ' ')
 	{
@@ -105,13 +106,6 @@ void	save(char *str, t_args *arr)
 	int		i;
 	long	num;
 
-	if (arr->size == 1 && !(*str))
-		error();
-	else if (!(*str))
-	{
-		arr->size--;
-		return ;
-	}
 	tmp = malloc((arr->size) * sizeof(int));
 	i = -1;
 	if (arr->size > 1)
@@ -121,7 +115,7 @@ void	save(char *str, t_args *arr)
 		free(arr->nums);
 	}
 	num = ft_atoi(str, tmp);
-	if (num > INT_MAX || num < INT_MIN)
+	if (num > INT_MAX || num < INT_MIN || !num)
 		error_free(tmp);
 	tmp[arr->size - 1] = (int)num;
 	arr->nums = tmp;

@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/10 15:22:02 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/14 12:31:33 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	makedummy(t_stack *stack);
 //Errores
 int		error(void);
 int		error_free(int *arr);
+void	check_empty(t_args *arr, char *str);
 void	check_reps(int *nums, int size);
 
 //------------------------------------------------------
