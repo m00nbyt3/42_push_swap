@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:07:44 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/10 15:22:55 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/14 11:31:19 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,13 @@ void	save(char *str, t_args *arr)
 	int		i;
 	long	num;
 
+	if (arr->size == 1 && !(*str))
+		error();
+	else if (!(*str))
+	{
+		arr->size--;
+		return ;
+	}
 	tmp = malloc((arr->size) * sizeof(int));
 	i = -1;
 	if (arr->size > 1)
