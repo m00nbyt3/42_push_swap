@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/14 12:47:00 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/14 12:58:53 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	t_args	args;
 
 	if (argc < 2)
-		error();
+		return (0);
 	stack.a_size = -1;
 	checkargs(argc, argv, &args);
 	stack.a = args.nums;
