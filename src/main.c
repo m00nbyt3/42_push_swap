@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/14 11:14:20 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/14 12:47:00 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	main(int argc, char **argv)
 		error();
 	stack.a_size = -1;
 	checkargs(argc, argv, &args);
-	if (!args.size)
-		error();
 	stack.a = args.nums;
 	stack.a_size = args.size;
 	check_reps(stack.a, stack.a_size);

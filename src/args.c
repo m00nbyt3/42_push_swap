@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 11:07:44 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/14 12:29:25 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/14 12:43:57 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	save(char *str, t_args *arr)
 		free(arr->nums);
 	}
 	num = ft_atoi(str, tmp);
-	if (num > INT_MAX || num < INT_MIN || !num)
+	if (num > INT_MAX || num < INT_MIN || !(*str))
 		error_free(tmp);
 	tmp[arr->size - 1] = (int)num;
 	arr->nums = tmp;
