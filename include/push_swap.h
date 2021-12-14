@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:14:41 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/14 12:31:33 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/14 15:48:50 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	rrr(t_stack *stack);
 //Utils
 void	ft_sort_int_tab(int *tab, int size);
 void	makedummy(t_stack *stack);
+void	issorted(t_stack *stack);
 
 //Errores
 int		error(void);

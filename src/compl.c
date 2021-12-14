@@ -6,26 +6,15 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 13:45:34 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/10 11:38:22 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/14 16:00:58 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	arrcpy(int *org, int *dst, int size);
 void	ft_sort_int_tab(int *tab, int size);
 void	makedummy(t_stack *stack);
-
-void	arrcpy(int *org, int *dst, int size)
-{
-	dst = malloc(size * sizeof(int));
-	while (size--)
-	{
-		*dst = *org;
-		org++;
-		dst++;
-	}
-}
+void	issorted(t_stack *stack);
 
 void	ft_sort_int_tab(int *tab, int size)
 {
@@ -63,4 +52,16 @@ void	makedummy(t_stack *stack)
 		stack->ordered[i] = stack->a[i];
 	ft_sort_int_tab(stack->ordered, stack->a_size);
 	stack->o_size = size;
+}
+
+void	issorted(t_stack *stack)
+{
+	int	pos;
+
+	pos = -1;
+	while (++pos < (stack->a_size - 1))
+		if (stack->a[pos] > stack->a[pos + 1])
+			return ;
+	free(stack->a);
+	exit(0);
 }

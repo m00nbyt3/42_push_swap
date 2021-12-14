@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 12:00:04 by ycarro            #+#    #+#             */
-/*   Updated: 2021/12/14 12:58:53 by ycarro           ###   ########.fr       */
+/*   Updated: 2021/12/14 15:49:29 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 	stack.a = args.nums;
 	stack.a_size = args.size;
 	check_reps(stack.a, stack.a_size);
+	issorted(&stack);
 	makedummy(&stack);
 	stack.b = malloc(args.size * sizeof(int));
 	stack.b_size = 0;
